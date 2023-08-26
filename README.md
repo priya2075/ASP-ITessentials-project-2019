@@ -1,1 +1,3 @@
-# ASP-ITessentials-project-2019
+<div align="center">
+.NET project for IT Essentials (ITE NITEC 2019)
+</div>
