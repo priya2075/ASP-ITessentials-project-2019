@@ -1,0 +1,97 @@
+﻿.banner {
+    background-image: url('../Images/About.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 300px;
+    z-index: 100;}
+.overlay {
+    position: relative;}
+.overlay:after {
+    height:330px;
+    position: absolute;
+    content:"";
+    top:0;
+    left:0;
+    width:100%;
+    opacity: .1;}
+.white:after {
+    background-color: white;}
+.banner > p.maintitle {
+    letter-spacing:1px;
+    margin-top:-50px!important;
+    line-height:initial;
+    color: white;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size:50px;
+    font-weight:bold;
+    text-shadow: 1px 1px 2px #000;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    filter: dropshadow(color=rgba(238, 235, 228, .3), offx=2, offy=2);}
+.banner > p.subtitle {
+    color: white;
+    padding: 10px;
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    font-size:25px;
+    text-shadow: 0.5px 0.5px 2px #000;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    filter: dropshadow(color=rgba(238, 235, 228, .3), offx=2, offy=2);}
+.divParagraph1 {
+    overflow: hidden;
+    height: 100%;
+    clear: both;
+    width: 1000px;
+    display: block;
+    margin: -20px auto 10px auto;
+    padding: 10px;}
+.divLeft {
+    float: left;
+    margin-left: 0;
+    width: 500px;
+    height: 450px;
+    text-align: center;
+    font-family: 'Crimson Text', serif;
+    font-size: 18px;
+    line-height: 1.6em;
+    padding: 5px;
+    border-right: 1px solid #dedede;}
+.divRight {
+    float: right;
+    margin-right: 0;
+    margin-top: 40px;
+    width: 450px;
+    height: 320px;
+    padding: 10px;}
+.divBottom {
+    margin:0 auto;
+    padding:40px 20px 20px 20px;
+    border:1px solid #dedede;
+    overflow:hidden;
+    display:block;
+    width: 600px;
+    height:340px;
+    text-align:center;}
+p {
+    font-family: 'Crimson Text', serif;
+    line-height: 1.4em;
+    margin-bottom: 10px;}
+video:focus,
+video a:focus {
+    border: 0 !important;
+    -moz-outline-style: none !important;
+    outline: none !important;
+    outline-offset: -2px;}
+video input:focus {
+    outline: none !important;}
+:hover, :active, :focus {
+    outline: 0 !important;
+    outline: none !important;}

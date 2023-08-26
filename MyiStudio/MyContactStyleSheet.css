@@ -1,0 +1,90 @@
+﻿.banner {
+    background-image: url('../Images/Contact1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 300px;
+    z-index: 100;}
+.overlay {
+    position: relative;}
+.overlay:after {
+    height:330px;
+    position: absolute;
+    content:"";
+    top:0;
+    left:0;
+    width:100%;
+    opacity: .2;}
+.white:after {
+    background-color: white;}
+.banner > p.maintitle {
+    letter-spacing:1px;
+    margin-top:-50px!important;
+    line-height:initial;
+    color: white;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size:50px;
+    font-weight:bold;
+    text-shadow: 1px 1px 2px #000;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    filter: dropshadow(color=rgba(238, 235, 228, .3), offx=2, offy=2);}
+.banner > p.subtitle {
+    color: white;
+    padding: 10px;
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    font-size:25px;
+    text-shadow: 0.5px 0.5px 2px #000;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    filter: dropshadow(color=rgba(238, 235, 228, .3), offx=2, offy=2);}
+.divParagraph1 {
+    overflow: hidden;
+    height: 100%;
+    clear: both;
+    width: 1000px;
+    display: block;
+    margin: -20px auto 10px auto;
+    padding: 10px;}
+.divLeft {
+    float: left;
+    margin-left: 0;
+    width: 500px;
+    height: 600px;
+    text-align: center;
+    font-family: 'Crimson Text', serif;
+    font-size: 18px;
+    line-height: 1.6em;
+    padding: 5px;
+    border-right: 1px solid #dedede;}
+.divRight {
+    float: right;
+    margin-right: 0;
+    margin-top: 80px;
+    width: 450px;
+    height: 320px;
+    font-family: 'Crimson Text', serif;
+    line-height: 1.6em;
+    padding: 10px;}
+.divRightContact ul {
+    list-style: none !important;
+    margin-bottom:30px;}
+.divRightContact li {
+    font-size:14px;
+    margin-bottom:5px;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none !important;}
+i.ion {
+    width:20px;
+    padding-right:5px;
+    margin-right:5px;
+    border-right:1px solid #dedede;
+    font-size: 20px !important;
+    font-weight: 900;}
