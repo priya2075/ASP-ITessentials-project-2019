@@ -1,0 +1,176 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Planner Nerd Association</title>
+    <link href="~/Images/icons8-vintage-glasses-32.png" rel="shortcut icon" type="image/png" />
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+        <%: Scripts.Render("~/Javascripts/smoothscroll_plugins.js") %>
+    </asp:PlaceHolder>
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/SiteMasterStyles.css" />    
+
+    <!-- CUSTOM --> 
+    <script src="/gscSearch.js"></script>
+    <script src="/smoothscroll_plugins.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700,700i" rel="stylesheet"/>
+    <link href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet'>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+
+</head>
+
+<body class="clearfix" onselectstart="return false" ondragstart="return false" draggable="false">
+
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <!-- TOP NAVIGATION -->
+        <div class="navlinks">
+            
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/MyiStudio/Home.aspx"><div class="logo"></div></asp:HyperLink>
+
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="fright">
+                                <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        
+                        <LoggedInTemplate>
+                            <ul class="fright2">
+                                <li><a class="hypManage" runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+
+                    <ul class="fleft">
+                        <li><a runat="server" href="~/MyiStudio/Home.aspx">Home</a></li>
+                        <li><a runat="server" href="~/MyiStudio/About.aspx">About</a></li>
+                        <li><a runat="server" href="~/MyiStudio/Contact.aspx">Contact</a></li>
+                        <li><a runat="server" href="~/MyiStudio/Order.aspx">Order</a></li>
+                        <li><a runat="server" href="~/MyiStudio/Search.aspx"><i class="fa fa-search"></i></a></li>
+                    </ul>
+
+        </div> <!-- /TOP NAVIGATION -->
+
+
+
+    <div id="wrap">
+        <table cellpadding="0" cellspacing="0" class="template">
+
+            
+            <tr id="cphWrap">
+                <td>
+                    <div class="container body-content">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        <!-- BODY CONTENT PLACEHOLDER -->
+
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr id="footer">
+                <td>
+
+                    <div class="tagline">
+                    <ul>
+	                    <li>Premium Leather</li>
+	                    <li>Stylish Colours</li>
+	                    <li>Gorgeous Designs</li>
+                    </ul>
+                    </div>
+
+                    <div class="footer-secondary">
+
+                    <asp:Label ID="lblFooterTitle" runat="server" Text="Find us!" CssClass="divContactTitle"></asp:Label>
+
+                    <div class="divAddress">
+                        
+                        <p>
+                            <b>ITE College East</b> <br />
+                            10 Simei Ave, Singapore 486047
+                        </p>
+
+                        <p><i>Contact</i>: <u><a href="mailto:mail@plannernerd.com">mail@plannernerd.com</a></u></p>
+
+                        <p><i>Telephone</i>: +(65)  6590 2262</p>
+                    </div>
+
+                    <div class="divSocial">
+                        <ul>
+                            <li><a target="_blank" href="https://facebook.com/" class="ion-social-facebook"></a></li>
+                            <li><a target="_blank" href="https://instagram.com/" class="ion-social-instagram"></a></li>
+                            <li><a target="_blank" href="https://twitter.com/" class="ion-social-twitter"></a></li>
+                            <li><a target="_blank" href="https://pinterest.com/" class="ion-social-pinterest"></a></li>
+                        </ul>
+                    </div>
+
+                    <hr class="style1" />
+
+                    <footer role="credit">
+                        <div class="divCredit" style="clear:both;" class="clearfix">
+                            &copy; <%: DateTime.Now.Year %>  PLANNER NERD &bull; ALL RIGHTS RESERVED
+                                <br />
+                            CRAFTED BY PRIYA &bull; Powered by <a target="_blank" href="https://visualstudio.microsoft.com/">Visual Studio</a> 
+                        </div>
+                    </footer>
+                        </div>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    
+    </form>
+
+
+
+    <asp:ContentPlaceHolder ID="Footer" runat="server">
+    <!-- FOOTER CONTENT PLACEHOLDER -->
+
+    </asp:ContentPlaceHolder>
+
+<div id="back-to-top"><span class="ion-arrow-up-a"></span></div> 
+<script src="/scriptop.js"></script>
+
+</body>
+</html>
